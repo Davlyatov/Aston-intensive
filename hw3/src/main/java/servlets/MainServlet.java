@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-//@WebServlet(name = "mainServlet", value = "/main-servlet")
 @WebServlet(value = "/main-servlet", name = "MainServlet")
 public class MainServlet extends HttpServlet {
 
@@ -27,6 +26,9 @@ public class MainServlet extends HttpServlet {
         int answer = Integer.parseInt(req.getParameter("answer"));
         if (answer == 1 ){
             resp.sendRedirect("/one-to-many");
+        }
+        if (answer == 2){
+            resp.sendRedirect("/many-to-many");
         }
     }
 }
